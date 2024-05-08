@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Redesign Project Page</title>
+    <link rel="stylesheet" href="ibm.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home Screen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="content">
+
+        <section id="title">
+            <h1>IBM Quantum: Qiskit Transpiler Project</h1>
+        </section>
+
+        <section id="overview" class="flex-container">
+            <div class="text">
+                <h2>Overview</h2>
+                <p>Last summer, I interned with IBM Quantum as a SWE research intern. My team worked with Qiskit which is an open-source software development kit for working with quantum computers. My project that summer was to design and implement multiple benchmarking assessments to evaluate the performance of Qiskit's transpilation process.</p>
+                <p>In quantum computing, transpilation refers to the process of converting a high-level quantum circuit representation into an equivalent circuit representation suitable for a specific quantum hardware or simulator. </p>
+            </div>
+            
+            <div class="image">
+                <img src="./images/ibm logo.png" alt="IBM logo">
+            </div>
+        </section>
+
+        <section id="problem" class="flex-container">
+            <div>
+                <h2>Problem</h2>
+                <p>The goal of the project was to conduct detailed analysis and evaluations of transpliation quality produced by preset manager passes in the Qiskit transplier.</p>
+                <p>To improve Qiskit-Terra transpilation, we attempted to utilize open source pre-built benchmarking tools. However, after not finding a reliable tool, our team decided that making a more accessible benchmarking tool would be beneficial in completing our project and help the growth of Qiskit.</p>
+                <p>Before deciding to build our own benchmarking tool, we first tried to run different benchmarking tools such as red queen, mqt bench, Arline bench, and transpile_benchy. After a couple days of going back and forth with installing packages and the tools not running, we decided to make our own.</p>
+
+            </div>
+
+            <div class="image">
+                <img src="./images/qiskit logo.png" alt="Qiskit logo">
+            </div>
+            
+        </section>
+
+        <section id="solution">
+            <h2>Solution</h2>
+            <p>My team and I researched IBM’s Qiskit software extensively to analyze the efficiency and effectiveness of the transpilation algorithms used in quantum circuit optimization.</p>
+            <p>
+                As a team, we decided to make our benchmarking tool runs tests for the following metrics:
+                <ul>
+                    <li>Runtime of transpiler</li>
+                    <li>Number of entangling gates that were added</li>
+                    <li>Output depth of the circuit</li>
+                    <li>Number of multi/single gates</li>
+                </ul>   
+            </p>
+            <p> I was responsible for implementing the benchmarking tools that would calculate the total number of entangling gates that were being added during the transpilation outcomes at different optimization levels. Additionally, I was responsible for organizing the file scripts into a single run path to create one framework for the qualitative analysis and wrote the docstrings.</p>
+        </section>
+
+        <section id="result">
+            <h2>Results</h2>
+            <p>RUNTIME BENCHMARKING:
+                <ul> Experiments:
+                    <ul>
+                        <li>Deutsch-Jozsa Circuits: 2– 129 Qubits</li>
+                        <li>Bernstein Vazirani: 2-500 Qubits</li>
+                    </ul>
+                </ul> 
+
+                <ul> Goals:
+                    <ul>
+                        <li>Verify that runtime benchmarking was accurate</li>
+                    </ul>
+                </ul> 
+
+                <ul> Predicted:
+                    <ul>
+                        <li>Optimization Level 3 would have the longest transpilation time</li>
+                        <li>As the number of qubits increase, the transpilation would also increase</li>
+                    </ul>
+                </ul>
+
+                <ul> Output:
+                    <ul>
+                        <img src="./images/runtime results.png" alt="image of terminal results for runtime benchmarking">
+                    </ul>
+                </ul>
+            </p>
+
+            <p>GATE COUNT BENCHMARKING:
+                <ul> Experiments:
+                    <ul>
+                        <li>Deutsch-Jozsa Circuits: 2– 129 Qubits</li>
+                        <li>Bernstein Vazirani: 2-500 Qubits</li>
+                    </ul>
+                </ul> 
+
+                <ul> Goals:
+                    <ul>
+                        <li>Visualize how the number of gates changes at each optimization level</li>
+                    </ul>
+                </ul> 
+
+                <ul> Predicted:
+                    <ul>
+                        <li>Gate increase would be linear as the number of Qubits Increased</li>
+                        <li>Optimization Level 1 would always have highest number of gates</li>
+                    </ul>
+                </ul>
+
+                <ul> Output:
+                    <ul>
+                        <img src="./images/gate count results.png" alt="image of terminal results for gate count benchmarking">
+                    </ul>
+                </ul>
+            </p>
+
+            <p>RATIO (SINGLE:MULTI QUBIT GATE) BENCHMARKING:
+                <ul> Experiments:
+                    <ul>
+                        <li>Deutsch-Jozsa Circuits: 2– 129 Qubits</li>
+                        <li>Bernstein Vazirani: 2-500 Qubits</li>
+                    </ul>
+                </ul> 
+
+                <ul> Goals:
+                    <ul>
+                        <li>Visualize how ‘depth’ changes per circuit</li>
+                    </ul>
+                </ul> 
+
+                <ul> Predicted:
+                    <ul>
+                        <li>Ratio would stay constant: no corresponding trend</li>
+                        <li>Optimization Level 3 would always have highest ratio</li>
+                    </ul>
+                </ul>
+
+                <ul> Output:
+                    <ul>
+                        <img src="./images/ratio results.png" alt="image of terminal results for ratio benchmarking">
+                    </ul>
+                </ul>
+            </p>
+        </section>
+
+        <section id="takeaway">
+            <h2>Takeaways</h2>
+            <p>Before starting my internship, I had no idea what quantum computing was. IBM introduced me to the world of quantum and I will forever be grateful for these past 12 weeks that have been filled with so many learning and growth opportunities.</p>
+            <p>Here are some of my major takeaways:</p>
+            <ul>
+                <li>Communication across different teams is super important. During our team check-ins, it was important for us to get feedback from the wider Qiskit community outside of IBM.</li>
+                <li>Taking progress notes is super important. When it came time to write the docstrings, it was super helpful to have our justifications for certain algorithms ready to be shared with others.</li>
+                <li>Making visual graphs to share results is much better than looking at the raw CSV reports.</li>
+            </ul>
+        </section>
+    </section>
+</body>
+</html>
